@@ -1,0 +1,6 @@
+.vagrant
+.vagrant.d
+.ssh
+keys
+.log
+log*
