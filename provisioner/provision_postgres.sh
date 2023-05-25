@@ -43,6 +43,7 @@ case $distro in
             sudo dnf install -y postgresql-server > /dev/null 2>&1
         elif [ -x "$(command -v yum)" ]; then
             sudo yum install -y postgresql-server > /dev/null 2>&1
+            sudo yum install postgresql-contrib  #Ajuste instalação extensão para trabalhar com hstore
         else
             echo "Gerenciador de pacotes não encontrado: dnf ou yum."
             exit 1
@@ -51,6 +52,7 @@ case $distro in
     "centos7")
         echo "Instalando o PostgreSQL no CentOS 7..."
         sudo yum install -y postgresql-server > /dev/null 2>&1
+        sudo yum install postgresql-contrib
         ;;
     *)
         echo "Distribuição Linux não suportada."
